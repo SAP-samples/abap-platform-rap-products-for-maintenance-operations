@@ -1,0 +1,146 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Maintenance Ops - Material',
+                     typeNamePlural: 'Maintenance Ops - List of Materials',
+                     title: { type: #STANDARD, value: 'TListTitle' } } }
+
+annotate entity ZMTL_MAT_C_MaintTaskListOpMat with
+{
+
+  @UI.facet: [{ id:            'MaintTaskListOpMat',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                label:         'Maint. Task List - Material',
+                position:      10 },
+               { id:          'Supplier',
+                purpose:       #STANDARD,
+                type:          #LINEITEM_REFERENCE,
+                label:         'Suppliers',
+                position:      20,
+                targetElement: '_Supplier'} ]               
+
+  @UI.identification: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{entity: { name: 'ZMTL_MAT_I_MaintTaskListOpMat',
+                                         element: 'TaskListType'  }}]
+  @UI.selectionField: [{ position: 10, element: 'TaskListType' }]
+  TaskListType;
+
+  @UI.identification: [{ position: 20 }]
+  @EndUserText: { label: 'Group', quickInfo: 'Key for Task List Group' }
+  TaskListGroup;
+
+  @UI.identification: [{ position: 30 }]
+  @EndUserText: { label: 'Group Counter', quickInfo: 'Group Counter' }
+  TaskListGroupCounter;
+
+  @UI.identification: [{ position: 40 }]
+  @EndUserText: { label: 'Sequence', quickInfo: 'Sequence' }
+  TaskListSequence;
+
+  @UI.identification: [{ position: 50 }]
+  @EndUserText: { label: 'Task list node', quickInfo: 'Task list node number for operation' }
+  TaskListOperationInternalId;
+
+  @UI.identification: [{ position: 60 }]
+  @EndUserText: { label: 'Allocation no.', quickInfo: 'No. for material comp. allocation to task list' }
+  TaskListOpBOMItmInternalID;
+
+  @UI.identification: [{ position: 70 }]
+  @EndUserText: { label: 'Counter', quickInfo: 'Internal counter' }
+  TaskListOpBOMItmIntVersCounter;
+
+  @UI.lineItem: [ { position: 10,  importance: #HIGH } ]
+  @UI.identification: [{ position: 80 }]
+  @EndUserText: { label: 'Task List Title', quickInfo: 'Task List Type/Group/GroupCounter' }
+  TListTitle;
+
+  @UI.lineItem: [ { position: 20,  importance: #HIGH } ]
+  @UI.identification: [{ position: 90 }]
+  @EndUserText: { label: 'Description', quickInfo: 'Routing Description' }
+  @Search: { defaultSearchElement: true, fuzzinessThreshold: 0.8 }
+  TaskListDesc;
+
+  @UI.lineItem: [ { position: 30,  importance: #HIGH } ]
+  @UI.identification: [{ position: 100 }]
+  @EndUserText: { label: 'BOM category', quickInfo: 'BOM category' }
+  BillOfMaterialCategory;
+
+  @UI.identification: [{ position: 105 }]
+  @EndUserText: { label: 'BOM', quickInfo: 'BOM' }
+  BoM; // Not Annotated in original
+
+  @UI.identification: [{ position: 110 }]
+  @EndUserText: { label: 'Alternative BOM', quickInfo: 'Alternative BOM' }
+  BillOfMaterialVariant;
+
+  @UI.identification: [{ position: 120 }]
+  @EndUserText: { label: 'Nodes', quickInfo: 'Node Number' }
+  BillOfMaterialItemNodeNumber;
+
+  @UI.identification: [{ position: 130 }]
+  @EndUserText: { label: 'Reservation/Purc.req', quickInfo: 'Relevancy to Materials Planning/Generation of Purchase Req.' }
+  ResvnIsMRPRlvtOrPurReqnIsCrted;
+
+  @UI.lineItem: [ { position: 40,  importance: #HIGH } ]
+  @UI.identification: [{ position: 140 }]
+  @EndUserText: { label: 'Product', quickInfo: 'Product' }
+  @Search: { defaultSearchElement: true, fuzzinessThreshold: 0.8 }
+  Product;
+
+  @UI.lineItem: [ { position: 50,  importance: #HIGH } ]
+  @UI.identification: [{ position: 150 }]
+  @EndUserText: { label: 'Product Description', quickInfo: 'Product Description' }
+  @Search: { defaultSearchElement: true, fuzzinessThreshold: 0.8 }
+  ProductDescription;
+
+  @UI.lineItem: [ { position: 60,  importance: #HIGH } ]
+  @UI.identification: [{ position: 160 }]
+  @EndUserText: { label: 'Product Quantity', quickInfo: 'Product Quantity' }
+  BillOfMaterialItemQuantity;
+
+  @UI.identification: [{ position: 170 }]
+  @EndUserText: { label: 'Component UoM', quickInfo: 'Component Unit of Measure' }
+  BillOfMaterialItemUnit;
+
+  @UI.identification: [{ position: 180 }]
+  @EndUserText: { label: 'Meas. Unit Text', quickInfo: 'Unit of Measurement Text (Maximum 10 Characters)' }
+  UnitOfMeasureName;
+
+  @UI.identification: [{ position: 190 }]
+  @EndUserText: { label: 'Item Category', quickInfo: 'Item category (bill of material)' }
+  BillOfMaterialItemCategory;
+
+  @UI.lineItem: [ { position: 70,  importance: #HIGH } ]
+  @UI.identification: [{ position: 200 }]
+  @EndUserText: { label: 'Item Category', quickInfo: 'Item Category Description' }
+  BillOfMaterialItemCategoryDesc;
+
+  @UI.identification: [{ position: 210 }]
+  @EndUserText: { label: 'Tech. Obj. Type', quickInfo: 'Technical Object Type' }
+  TechObjIsEquipOrFuncnlLoc;
+
+  @UI.identification: [{ position: 220 }]
+  @EndUserText: { label: 'Technical Object Type', quickInfo: 'Technical Object Type' }
+  TechObjType;
+
+  @UI.identification: [{ position: 230 }]
+  @EndUserText: { label: 'Equipment', quickInfo: 'Equipment Number' }
+  Equipment;
+
+  @UI.identification: [{ position: 235 }]
+  @EndUserText: { label: 'FLOC', quickInfo: 'FLOC' }
+  FLOC; // Not Annotated in original
+
+//  @UI.identification: [{ position: 240 }]
+//  @EndUserText: { label: 'Supplier', quickInfo: 'Supplier\'s Account Number' }
+//  //  @Consumption.valueHelpDefinition: [{entity: { name: 'ZSUPPL_VH',
+//  //                                                element: 'Supplier'  }}]
+//  Supplier;
+
+//  @UI.identification: [{ position: 250 }]
+//  @EndUserText: { label: 'Name of Supplier', quickInfo: 'Name of Supplier' }
+//  //  @Consumption.valueHelpDefinition: [{entity: { name: 'ZSUPPL_VH',
+//  //                                                element: 'SupplierName'  }}]
+//  SupplierName;
+
+}

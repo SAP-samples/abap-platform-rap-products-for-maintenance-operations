@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Maintenance Ops - Supplier',
+                     typeNamePlural: 'Maintenance Ops - List of Suppliers',
+                     title: { type: #STANDARD, value: 'Supplier' } } }
+annotate entity ZMTL_MAT_I_Supplier
+  with 
+{
+  @UI.facet: [ { id:            'Supplier',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Supplier',
+                 position:      10 } ]
+  
+  @UI.hidden: true
+  Reservation;
+  
+  @UI.hidden: true
+  ReservationItem;
+  
+  @UI.hidden: true
+  RecordType;  
+  
+  @UI.hidden: true
+  Product;
+  
+  @UI.lineItem: [ { position: 10,  importance: #HIGH } ]
+  @UI.identification: [{ position: 10 }]
+  @EndUserText: { label: 'Supplier', quickInfo: 'Supplier' }
+  Supplier;
+  
+  @UI.lineItem: [ { position: 20,  importance: #HIGH } ]
+  @UI.identification: [{ position: 20 }]
+  @EndUserText: { label: 'Supplier Name', quickInfo: 'Supplier Name' }
+  SupplierName;
+  
+}

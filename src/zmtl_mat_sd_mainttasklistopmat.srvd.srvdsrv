@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZMTL_MAT: MaintTaskListOpMat'
+define service ZMTL_MAT_SD_MaintTaskListOpMat {
+  expose ZMTL_MAT_C_MaintTaskListOpMat as MaintTaskListOpMat;
+  expose ZMTL_MAT_I_Supplier           as Supplier;
+}
