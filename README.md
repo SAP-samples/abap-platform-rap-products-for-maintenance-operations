@@ -1,41 +1,66 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and REUSE.toml. All repositories on github.com/SAP-samples will be created based on this template.
+# SAP Build Extensibility Scenario
+# Approval for Financial Asset Creation in S/4HANA
 
-# Containing Files
+## Overview
 
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
+This usecase aims to support technician and on-site operators in retrieving the list of components assigned to a maintenance operations of a task list.
+In particular, the scenario covers the definition of custom CDS-views, the creation of a corresponding UI service and - finally - the build of a lean Fiori application to visualize the data.
 
-2. The REUSE.toml file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the REUSE.toml in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
+The scenario was created to showcase how to enhance the functionalities offered by SAP S/4HANA Cloud Public Edition following the so called "_Developer/On-Stack_" extensibility model. 
+The technical artefacts have been developed using the ABAP RESTful Application Programming Model (RAP) and SAP Fiori tools for the UI, leveraging the ABAP stack offered by SAP S/4HANA as the development platform.
 
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
+Using the custom-developed app, a user get access to the list of materials involved in the maintenance operations and sub-operations.
 
-# [Title]
-<!-- Please include descriptive title -->
+> [!Note]
+  > - In this sample, data are retrieved from an SAP S/4HANA Cloud Public Edition.
 
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
+### Key Features
+- Facilitates the identification of products involved in maintenance operations.
+- Extends the functionalities of SAP S/4HANA Cloud Public Edition, maintaining the core clean.
+- Access to live data from SAP S/4HANA leveraging standard CDS views like [_I_MAINTTASKLISTOPMATERIAL_](https://api.sap.com/search?searchterm=I_MAINTTASKLISTOPMATERIAL&tab=All&$refinedBy=true).
 
-## Description
-<!-- Please include SEO-friendly description -->
 
-## Requirements
+## Prerequisites
 
-## Download and Installation
+### Setup of the development environment - Eclipse and SAP ADT
+Download and install the Eclipse IDE and the ABAP Development Tools (ADT) plugin; a complete step-by-step guide covering the process is available [here](https://developers.sap.com/tutorials/abap-install-adt..html)
 
-## Known Issues
-<!-- You may simply state "No known issues. -->
+### Installation of abapGit
+Install the abapGit plugin as explained [here](https://developers.sap.com/tutorials/abap-install-abapgit-plugin..html).
 
-## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
-## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+## Content Download and Installation 
+
+The following paragraphs explain how the delivered content can be download, deployed and enabled in your development environment.
+The content can be cloned directly from this Git repository as briefly explained in paragraph :one:. 
+To complete the setup of this scenario, please follow the instructions carefully.
+
+> [!Note]
+> To setup this scenario, we assume a basic technical knowledge of SAP ABAP RESTful Application Programming Model (RAP).
+> A detailed explanation of the definition, the purpose and the deployment of the various artefacts is the out of scope for this document.
+
+
+### :one: Clone Git repository into your ABAP Environment
+- Launch Eclipse/ADT and open the _abapGit Repositories_ view clicking "_Window > Show View > Other …_"; expand the category _ABAP_ and select _abapGit Repositories_ and finally click _Open_.
+- Click the clone button (the green "+" button) in the _abapGit Repositories_ view.
+- Enter the URL of the Git repository and press _Next_.
+- Enter the URL of the Git repository and press _Next_.
+- Enter your GitHub _username_ and _password/token_
+- Select the desired _Branch_ and _Package_, where the Git repository should be cloned. (If you have no packages, you need to create a new one before) and click _Next_.
+- Select a transport request and click _Finish_.
+- Open the _abapGit Repositories_ tab, right-click on your package and click _pull_ to import the content.
+- The imported sources should be now available under your package (see the screenshot below as a reference)
+<p><img width="1289" alt="image" src="https://github.com/SAP-samples/asset-management---maintenance-task-list-components/blob/main/pictures/Eclipse_Content_01.jpg" /></p>
+
+### :two: Publish the OData V4 UI service
+- In the _Project Explorer_ view, expand the node _Business Services > Service Bindings_ and double click on the existing binding.
+- Click _Publish_ to locally publish the service. 
+<p><img width="1289" alt="image" src="https://github.com/SAP-samples/asset-management---maintenance-task-list-components/blob/main/pictures/Eclipse_UI_Service_Publishing.jpg" /></p>
+
+### :three: Test the autogenerated UI
+- Once the service is published, select the entity _MaintTaskListOpMat_ and finally click on _Preview_ to test the Fiori application
+<p><img width="1289" alt="image" src="https://github.com/SAP-samples/asset-management---maintenance-task-list-components/blob/main/pictures/Eclipse_UI_Service_Publishing_02.jpg" /></p>
+
 
 ## License
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
