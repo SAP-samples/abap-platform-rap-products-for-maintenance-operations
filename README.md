@@ -11,14 +11,17 @@ The technical artefacts have been developed using the ABAP RESTful Application P
 
 Using such a custom-developed app, a user get access to the list of products involved in the maintenance operations and sub-operations.
 
-
 > [!Note]
   > - In this sample, data are retrieved from an SAP S/4HANA Cloud Public Edition.
+
+## Business Problem
+- Lack of standard reports that allow customers to query for and to find which products are required to perform a certain operation in a maintenance task list.
+- Customers are expected to develop their own reports using standard CDS views like [_I_MAINTTASKLISTOPMATERIAL_](https://api.sap.com/search?searchterm=I_MAINTTASKLISTOPMATERIAL&tab=All&$refinedBy=true).
 
 ### Key Features
 - Facilitates the identification of products involved in maintenance operations.
 - Extends the functionalities of SAP S/4HANA Cloud Public Edition, maintaining the core clean.
-- Access to live data from SAP S/4HANA leveraging standard CDS views like [_I_MAINTTASKLISTOPMATERIAL_](https://api.sap.com/search?searchterm=I_MAINTTASKLISTOPMATERIAL&tab=All&$refinedBy=true).
+- Access to live data from SAP S/4HANA leveraging standard CDS views.
 
 
 ## Prerequisites
