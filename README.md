@@ -1,5 +1,5 @@
 # SAP Build Extensibility Scenario
-# Asset Management: Dispaly Products for Maintenance Task List Operations
+# Asset Management: Display Products for Maintenance Task List Operations
 
 ## Overview
 
