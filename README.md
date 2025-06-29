@@ -1,15 +1,16 @@
 # SAP Build Extensibility Scenario
-# Approval for Financial Asset Creation in S/4HANA
+# Retrieve Products for Maintenance Task List Operations
 
 ## Overview
 
-This usecase aims to support technician and on-site operators in retrieving the list of components assigned to a maintenance operations of a task list.
+This usecase aims to support technicians and on-site operators in retrieving the list of products assigned to a maintenance operations of a task list.
 In particular, the scenario covers the definition of custom CDS-views, the creation of a corresponding UI service and - finally - the build of a lean Fiori application to visualize the data.
 
 The scenario was created to showcase how to enhance the functionalities offered by SAP S/4HANA Cloud Public Edition following the so called "_Developer/On-Stack_" extensibility model. 
 The technical artefacts have been developed using the ABAP RESTful Application Programming Model (RAP) and SAP Fiori tools for the UI, leveraging the ABAP stack offered by SAP S/4HANA as the development platform.
 
-Using the custom-developed app, a user get access to the list of materials involved in the maintenance operations and sub-operations.
+Using such a custom-developed app, a user get access to the list of products involved in the maintenance operations and sub-operations.
+
 
 > [!Note]
   > - In this sample, data are retrieved from an SAP S/4HANA Cloud Public Edition.
