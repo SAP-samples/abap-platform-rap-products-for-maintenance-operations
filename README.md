@@ -68,3 +68,5 @@ To complete the setup of this scenario, please follow the instructions carefully
 
 ## License
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/abap-platform-rap-products-for-maintenance-operations)](https://api.reuse.software/info/github.com/SAP-samples/abap-platform-rap-products-for-maintenance-operations)
