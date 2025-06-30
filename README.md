@@ -7,7 +7,7 @@ This usecase aims to support technicians and on-site operators in retrieving the
 In particular, the scenario covers the definition of custom CDS-views, the creation of a corresponding UI service and - finally - the build of a lean Fiori application to visualize the data.
 
 The scenario was created to showcase how to enhance the functionalities offered by SAP S/4HANA Cloud Public Edition following the so called "_Developer/On-Stack_" extensibility model. 
-The technical artefacts have been developed using the ABAP RESTful Application Programming Model (RAP) and SAP Fiori tools for the UI and, in this particualr example, we decided to leverage the ABAP stack offered by SAP S/4HANA to deploy the content.
+The technical artefacts have been developed using the ABAP RESTful Application Programming Model (RAP) and SAP Fiori tools for the UI and, in this particular example, we decided to leverage the ABAP stack offered by SAP S/4HANA to deploy the content.
 
 Using such a custom-developed app, a user get access to the list of products involved in the maintenance operations and sub-operations.
 
