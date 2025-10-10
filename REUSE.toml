@@ -14,3 +14,8 @@ SPDX-License-Identifier = "Apache-2.0"
 path = "pictures/*"
 SPDX-FileCopyrightText = "2025 SAP SE or an SAP affiliate company and asset-management---maintenance-task-list-components contributors"
 SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "src/*"
+SPDX-FileCopyrightText = "2025 SAP SE or an SAP affiliate company and asset-management---maintenance-task-list-components contributors"
+SPDX-License-Identifier = "Apache-2.0"
